@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+import {
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+---
+
+<div class="contact-list">
+  <a class="contact-item" href="mailto:nattar_c@hotmail.com">
+    <Icon iconData={faEnvelope} class="contact-icon" />
+    <span class="contact-text">nattar_c@hotmail.com</span>
+  </a>
+
+  <a class="contact-item" href="tel:+66884324988">
+    <Icon iconData={faPhone} class="contact-icon" />
+    <span class="contact-text">+66 88 432 4988</span>
+  </a>
+
+  <a
+    class="contact-item"
+    href="https://www.linkedin.com/in/nattha-chaiyarin-419b2837a/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Icon iconData={faLinkedin} class="contact-icon" />
+    <span class="contact-text">LinkedIn</span>
+  </a>
+
+  <div class="contact-item">
+    <Icon iconData={faLocationDot} class="contact-icon" />
+    <span class="contact-text">Thailand</span>
+  </div>
+</div>

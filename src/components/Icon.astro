@@ -1,0 +1,14 @@
+---
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
+interface Props {
+  iconData: any;
+  class?: string;
+}
+
+const { iconData, class: className } = Astro.props;
+
+const svg = icon(iconData).html.join("");
+---
+
+<span class={className} set:html={svg} />
