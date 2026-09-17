@@ -1,0 +1,11 @@
+.color-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

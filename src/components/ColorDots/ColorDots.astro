@@ -1,0 +1,18 @@
+---
+import "./styles.css";
+
+interface Props {
+  colors: string[];
+}
+
+const { colors } = Astro.props;
+---
+
+<div class="color-dots">
+  {
+    colors.map((color) => (
+      <span class="dot" style={`background-color: ${color};`} />
+    ))
+  }
+</div>
+

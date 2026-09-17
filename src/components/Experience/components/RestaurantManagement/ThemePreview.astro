@@ -1,0 +1,82 @@
+<div class="theme-preview">
+  <img
+    class="theme-image theme-image-light"
+    src="/public/images/Light Mode.png"
+    alt="Ligth Mode"
+  />
+
+  <img
+    class="theme-image theme-image-dark"
+    src="/public/images/Dark Mode.png"
+    alt="Dark Mode"
+    aria-hidden="true"
+  />
+
+  <button class="dark-mode-trigger" aria-label="Show dark mode" type="button"
+  ></button>
+</div>
+
+<script>
+  document.querySelectorAll(".theme-preview").forEach((preview) => {
+    const button = preview.querySelector(".dark-mode-trigger");
+
+    button?.addEventListener("click", () => {
+      preview.classList.toggle("show-dark");
+    });
+  });
+</script>
+
+<style>
+  .theme-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    background: var(--warm-yellow);
+  }
+
+  .theme-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .theme-image-light {
+    z-index: 1;
+  }
+
+  .theme-image-dark {
+    z-index: 2;
+    clip-path: polygon(120% 0, 120% 100%, 0 100%);
+  }
+
+  .dark-mode-trigger {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+    cursor: pointer;
+  }
+
+  /* Hover / active state */
+  .theme-preview:hover .theme-image-dark,
+  .theme-preview.show-dark .theme-image-dark {
+    z-index: 4;
+    clip-path: none;
+  }
+
+  .theme-preview:hover .theme-image-light,
+  .theme-preview.show-dark .theme-image-light {
+    z-index: 1;
+  }
+</style>

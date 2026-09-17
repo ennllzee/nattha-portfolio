@@ -1,0 +1,48 @@
+---
+import ThemePreview from "./ThemePreview.astro";
+
+const WORKS = [
+  {
+    title: "Dark Theme",
+    image: ThemePreview,
+    summary: "Designed for different preferences and accessibility needs. ",
+    description:
+      "The dark theme uses carefully adapted colors—not random replacements—while maintaining product identity, visual consistency, and color contrast requirements.",
+  },
+  {
+    title: "Table Service",
+    image: "/public/images/work-two.jpg",
+    summary: "More than just ordering and paying.",
+    description:
+      "We mapped out different dine-in scenarios and designed the workflow to cover reservations, joining tables, splitting tables, releasing tables, and bill splitting.",
+  },
+  {
+    title: "Inventory Management",
+    image: "/public/images/work-three.jpg",
+    summary: "Know what you have, what it costs, and what you might lose.",
+    description:
+      "Designed inventory flows around different products, units, costs, and resources to help prevent shortages and lost profit.",
+  },
+];
+---
+
+<div class="sample-works">
+  {
+    WORKS.map((work, index) => (
+      <div class={`sample-work sample-work-${index + 1}`}>
+        <div class="sample-work-text">
+          <h4>{work.title}</h4>
+        </div>
+
+        <div class="sample-work-image">
+          <work.image />
+        </div>
+
+        <div class="sample-work-description">
+          <strong>{work.summary}</strong>
+          <p>{work.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
