@@ -9,3 +9,9 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
+
+@media (max-width: 767px) {
+  .color-dots {
+    margin-top: 8px;
+  }
+}

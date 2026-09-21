@@ -1,0 +1,154 @@
+.sample-works {
+  width: 100%;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  background: var(--coral-red);
+  color: var(--off-white);
+}
+
+.sample-work {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.sample-work-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sample-work-text h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.sample-work-image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: var(--warm-yellow);
+  overflow: hidden;
+}
+
+.sample-work-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sample-work-description strong,
+.sample-work-description p {
+  margin: 0;
+}
+
+.theme-preview {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 2 / 1;
+
+  overflow: hidden;
+}
+
+.theme-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  display: block;
+}
+
+.theme-light {
+  z-index: 1;
+}
+
+.theme-dark {
+  z-index: 2;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.dark-trigger {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: 0;
+
+  background: transparent;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+  z-index: 3;
+
+  cursor: pointer;
+}
+
+.theme-preview.show-dark .theme-dark {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.theme-preview.show-dark .theme-light {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .theme-preview:hover .theme-dark {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .theme-preview:hover .theme-light {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .sample-works {
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sample-work-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Work 1 & 3: text left, image right */
+  .sample-work-1 .sample-work-text,
+  .sample-work-1 .sample-work-description,
+  .sample-work-3 .sample-work-text,
+  .sample-work-3 .sample-work-description {
+    text-align: left;
+  }
+
+  /* Work 2: image left, text right */
+  .sample-work-2 .sample-work-top {
+    direction: rtl;
+  }
+
+  .sample-work-2 .sample-work-text,
+  .sample-work-2 .sample-work-description {
+    text-align: right;
+  }
+}

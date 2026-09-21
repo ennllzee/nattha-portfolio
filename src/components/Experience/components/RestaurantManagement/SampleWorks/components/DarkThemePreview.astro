@@ -1,0 +1,44 @@
+<div class="theme-preview">
+  <!-- Light mode: default -->
+  <img
+    class="theme-image theme-light"
+    src="/public/images/Light Mode.png"
+    alt="Ligth Mode"
+  />
+  <!-- Dark mode: initially only the triangle is visible -->
+  <img
+    class="theme-image theme-dark"
+    src="/public/images/Dark Mode.png"
+    alt="Dark Mode"
+    aria-hidden="true"
+  />
+
+  <!-- Clickable dark-mode triangle -->
+  <button class="dark-trigger" type="button" aria-label="Show dark mode"
+  ></button>
+</div>
+
+<script>
+  document.querySelectorAll(".theme-preview").forEach((preview) => {
+    const trigger = preview.querySelector<HTMLButtonElement>(".dark-trigger");
+
+    if (!trigger) return;
+
+    const showDark = () => {
+      preview.classList.add("show-dark");
+    };
+
+    const hideDark = () => {
+      preview.classList.remove("show-dark");
+    };
+
+    // Mobile / touch
+    trigger.addEventListener("click", () => {
+      preview.classList.toggle("show-dark");
+    });
+
+    // Desktop
+    preview.addEventListener("mouseenter", showDark);
+    preview.addEventListener("mouseleave", hideDark);
+  });
+</script>

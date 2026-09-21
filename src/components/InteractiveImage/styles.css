@@ -1,0 +1,23 @@
+.stage-preview {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+}
+
+.stage-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+  display: block;
+
+  opacity: 0;
+}
+
+.stage-image.active {
+  opacity: 1;
+}

@@ -1,0 +1,27 @@
+---
+import "./styles.css";
+
+interface Props {
+  images: string[];
+  alt: string;
+}
+
+const { images, alt } = Astro.props;
+---
+
+<div class="stage-preview">
+  {
+    images.map((image, index) => (
+      <img
+        src={image}
+        alt={index === 0 ? alt : ""}
+        aria-hidden={index !== 0}
+        class={`stage-image ${index === 0 ? "active" : ""}`}
+      />
+    ))
+  }
+</div>
+
+<script>
+  import "./script.ts";
+</script>

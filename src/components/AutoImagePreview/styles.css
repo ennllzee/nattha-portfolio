@@ -1,0 +1,62 @@
+.auto-image-preview {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+}
+
+.auto-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  opacity: 0;
+}
+
+.auto-image.active {
+  opacity: 1;
+}
+
+/* FADE */
+.transition-fade .auto-image {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.transition-fade .auto-image.active {
+  opacity: 1;
+}
+
+/* SLIDE */
+.transition-slide .auto-image {
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.transition-slide .auto-image.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* COLLAPSE */
+.transition-collapse .auto-image {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition:
+    opacity 1.2s ease,
+    clip-path 1.2s ease;
+}
+
+.transition-collapse .auto-image.active {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+}
