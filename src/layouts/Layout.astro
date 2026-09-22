@@ -21,11 +21,14 @@ const { title = "Portfolio" } = Astro.props;
 
   <body>
     <div class="portfolio-layout">
-      <Sidebar/>
+      <Sidebar />
 
       <main class="content">
         <slot />
       </main>
     </div>
   </body>
+  <script>
+    import "../scripts/parallaxImage.ts";
+  </script>
 </html>

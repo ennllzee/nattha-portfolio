@@ -1,7 +1,7 @@
 .auto-image-preview {
   position: relative;
   height: 100%;
-  aspect-ratio: 2 / 1;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -12,9 +12,8 @@
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: contain;
+  display: block;
 
   opacity: 0;
 }
@@ -59,4 +58,25 @@
 .transition-collapse .auto-image.active {
   opacity: 1;
   clip-path: inset(0 0 0 0);
+}
+
+/* SLIDE UP */
+.transition-slide-up {
+  position: relative;
+  overflow: hidden;
+}
+
+.transition-slide-up .auto-image {
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-slide-up .auto-image.active {
+  transform: translateY(0);
+}
+
+.transition-slide-up .auto-image.previous {
+  transform: translateY(-100%);
 }

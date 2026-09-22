@@ -1,0 +1,126 @@
+.sample-features {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--coral-red) 0%,
+    var(--warm-yellow) 100%
+  );
+}
+
+.sample-feature {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+
+  background: var(--off-white);
+  color: var(--dark-navy);
+}
+
+/* Switch image/content for the 2nd row */
+.sample-feature-2 {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.sample-feature-2 .sample-feature-image {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.sample-feature-2 .sample-feature-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sample-feature-image {
+  width: 300px;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.sample-feature-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.sample-feature-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.sample-feature-content h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.sample-feature-content strong {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.sample-feature-content p {
+  margin: 4px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .sample-features {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sample-feature,
+  .sample-feature-2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .sample-feature-2 .sample-feature-image,
+  .sample-feature-2 .sample-feature-content {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .sample-feature-image {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+  }
+
+  .sample-feature-content {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .sample-feature-content h4 {
+    font-size: 22px;
+  }
+
+  .sample-feature-content strong {
+    margin-top: 8px;
+  }
+
+  .sample-feature-content p {
+    margin-top: 2px;
+  }
+}

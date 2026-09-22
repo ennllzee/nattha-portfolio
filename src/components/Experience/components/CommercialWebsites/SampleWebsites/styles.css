@@ -59,15 +59,8 @@
   justify-content: center;
 
   overflow: hidden;
-}
 
-.sample-website-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  display: block;
+  background-color: var(--white);
 }
 
 .sample-website-description {
@@ -164,14 +157,7 @@
 
   .sample-website-image {
     height: 150px;
-    aspect-ratio: auto
-  }
-
-  .sample-website-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
+    width: auto;
   }
 
   .sample-website-description {

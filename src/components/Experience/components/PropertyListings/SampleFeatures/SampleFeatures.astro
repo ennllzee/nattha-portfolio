@@ -1,0 +1,48 @@
+---
+import Microsite from "./components/Microsite.astro";
+import OneSite from "./components/OneSite.astro";
+import PaymentFlow from "./components/PaymentFlow.astro";
+import "./styles.css";
+
+const FEATURES = [
+  {
+    title: "One Site",
+    image: OneSite,
+    summary: "One platform, multiple schools.",
+    description:
+      "The structure needs to be carefully planned to stay <strong>flexible and scalable</strong> for future requirements. We use dynamic pages instead of building separate static pages, so every design and implementation decision needs to consider how different parts of the platform connect. This also includes creating <strong>flexible color themes</strong> for each school while keeping the shared structure consistent.",
+  },
+  {
+    title: "Microsite",
+    image: Microsite,
+    summary: "Giving each property company its own identity.",
+    description:
+      "Property companies and agencies can have their own microsite to showcase their <strong>brand and property listings</strong>. The experience needs to work beyond the final presentation—the <strong>submission and management process</strong> also has to be simple and well structured.",
+  },
+  {
+    title: "Status Tracking",
+    image: PaymentFlow,
+    summary: "A purchase doesn’t end with payment.",
+    description:
+      "On our platform, a successful purchase needs to trigger the right actions, such as <strong>publishing a listing or microsite</strong>, while unsubscribing should automatically reverse those actions. Since one user can own multiple listings, I designed the <strong>user and data workflows</strong> to correctly connect each subscription to the right listing and keep its status in sync throughout the process.",
+  },
+];
+---
+
+<div class="sample-features">
+  {
+    FEATURES.map((feature, index) => (
+      <div class={`sample-feature sample-feature-${index + 1}`}>
+        <div class="sample-feature-image">
+          <feature.image />
+        </div>
+
+        <div class="sample-feature-content">
+          <h4>{feature.title}</h4>
+          <strong>{feature.summary}</strong>
+          <p set:html={feature.description} />
+        </div>
+      </div>
+    ))
+  }
+</div>
