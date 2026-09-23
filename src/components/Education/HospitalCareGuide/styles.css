@@ -1,0 +1,112 @@
+/* =========================
+   Expanded Details
+========================= */
+.education-details {
+  grid-column: 1 / -1;
+  box-shadow: 0 8px 16px rgba(23, 43, 58, 0.12);
+  z-index: 3;
+}
+
+.education-details-container {
+  width: 100%;
+  padding: 40px;
+
+  background: var(--off-white);
+  color: var(--coral-red);
+}
+
+/* =========================
+   Row 1 — Intro
+========================= */
+
+.education-details-intro {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  justify-content: center;
+}
+
+.education-details-intro strong {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.education-details-intro span {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* =========================
+   Row 2 — Stages
+========================= */
+
+.education-images-buttons {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* =========================
+   Row 3 — Video
+========================= */
+
+.education-video {
+  width: 100%;
+  margin-top: 20px;
+
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--dark-navy);
+}
+
+.education-video iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 767px) {
+  /* -------------------------
+     Expanded Details
+  ------------------------- */
+
+  .education-details-container {
+    padding: 20px;
+  }
+
+  /* Row 1 */
+
+  .education-details-intro {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .education-details-intro strong {
+    font-size: 34px;
+  }
+
+  .education-details-intro span {
+    font-size: 16px;
+  }
+
+  /* Row 2 */
+
+  .education-images-buttons {
+    margin-top: 20px;
+  }
+
+  /* Row 3 */
+
+  .education-video {
+    margin-top: 30px;
+  }
+}

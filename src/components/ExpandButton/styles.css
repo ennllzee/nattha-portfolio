@@ -1,0 +1,56 @@
+.more-button {
+  align-self: flex-end;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 20px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--coral-red);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.more-button svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.more-button:hover {
+  text-decoration: underline;
+}
+
+.more-icon {
+  display: inline-flex;
+  transition: transform 0.4s ease;
+}
+
+.more-button[aria-expanded="true"] .more-icon {
+  transform: rotate(180deg);
+}
+
+.is-collapsed {
+  display: none;
+}
+
+.is-expanded {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .more-button {
+    align-self: flex-start;
+    margin-top: 16px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,30 @@
+---
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import Icon from "../Icon.astro";
+import "./styles.css";
+
+interface Props {
+  refClass: string;
+  childClass: string;
+}
+
+const { refClass, childClass } = Astro.props;
+---
+
+<button
+  class="more-button"
+  type="button"
+  aria-expanded="false"
+  data-ref-class={refClass}
+  data-expand-class={childClass}
+>
+  <span class="more-icon">
+    <Icon iconData={faPlus} />
+  </span>
+
+  <span class="more-text">MORE</span>
+</button>
+
+<script>
+  import "./script.ts";
+</script>

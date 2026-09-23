@@ -1,0 +1,34 @@
+---
+import ImageButtons from "./components/ImageButtons/ImageButtons.astro";
+import Reward from "./components/Reward/Reward.astro";
+import "./styles.css";
+---
+
+<div class="education-details">
+  <div class="education-details-container">
+    <!-- Row 1 -->
+    <div class="education-details-intro">
+      <strong>SIMPLE</strong>
+      <span>— A simple and intuitive healthcare guide.</span>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="education-images-buttons">
+      <ImageButtons />
+    </div>
+
+    <!-- Row 3 -->
+    <div class="education-video">
+      <iframe
+        width="1521"
+        height="526"
+        src="https://www.youtube.com/embed/c0tEsXE78jM"
+        title="Take Care Web Application | แพลตฟอร์มบริการไกด์สำหรับการบริการในโรงพยาบาล"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <Reward />
+</div>

@@ -1,5 +1,5 @@
 document.querySelectorAll(".stage-preview").forEach((preview) => {
-  const images = preview.querySelectorAll(".stage-image");
+  const images = preview.querySelectorAll(".image-button");
 
   let current = 0;
   let interval: number | undefined;

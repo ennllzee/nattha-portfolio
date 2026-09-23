@@ -1,0 +1,62 @@
+---
+import "./styles.css";
+
+interface ImageButton {
+  image: string;
+  title: string;
+  description: string;
+}
+
+const IMAGES: ImageButton[] = [
+  {
+    image: "/public/images/pexels-martinpechy-407422.jpg",
+    title: "Patients",
+    description:
+      "People who need hospital services and may need some help while navigating their visit, especially older adults.",
+  },
+  {
+    image: "/public/images/pexels-vivo-ken-990309021-35697412.jpg",
+    title: "Guides",
+    description:
+      "People who assist and guide patients throughout their hospital visit, while keeping patient carers updated on their status when they cannot be there in person.",
+  },
+  {
+    image: "/public/images/pexels-zen-chung-5749146.jpg",
+    title: "Monitors",
+    description:
+      "Patients’ carers who want to follow their loved one’s hospital journey and stay updated on their progress when they cannot be there in person.",
+  },
+  {
+    image: "/public/images/pexels-mart-production-7709091.jpg",
+    title: "Admins",
+    description:
+      "People who manage the platform, approve Guides and Monitors, and oversee the service to keep everything running smoothly.",
+  },
+];
+---
+
+<div class="image-buttons-container">
+  <div class="image-buttons">
+    {
+      IMAGES.map((item, index) => (
+        <button
+          class:list={["image-button", { selected: index === 0 }]}
+          type="button"
+          data-title={item.title}
+          data-description={item.description}
+        >
+          <img src={item.image} alt={item.title} />
+          <span>{item.title}</span>
+        </button>
+      ))
+    }
+  </div>
+  <div class="image-button-info">
+    <h4>{IMAGES[0].title}</h4>
+    <p>{IMAGES[0].description}</p>
+  </div>
+</div>
+
+<script>
+  import "./script.ts";
+</script>

@@ -8,7 +8,7 @@ const updateParallax = () => {
       const progress =
         (viewportHeight - rect.top) / (viewportHeight + rect.height);
 
-      const offset = (progress - 0.5) * 200;
+      const offset = (progress - 0.5) * -200;
 
       element.style.setProperty("--parallax-offset", `${offset}px`);
     });
