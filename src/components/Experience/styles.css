@@ -46,7 +46,7 @@
 }
 
 .work-item {
-  padding: 10px 0px;
+  padding-top: 20px;
   width: 100%;
 }
 
@@ -147,7 +147,7 @@
 
 @media (max-width: 767px) {
   .experience {
-    padding: 20px 0;
+    padding-top: 20px;
   }
 
   .experience-item {

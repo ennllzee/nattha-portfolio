@@ -1,0 +1,32 @@
+.floating-circle {
+  position: absolute;
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+
+  border-radius: 50%;
+  background: var(--circle-color);
+
+  transform: translate(
+    calc(-50% + var(--drag-x, 0px)),
+    calc(-50% + var(--drag-y, 0px))
+  );
+
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.floating-circle.is-dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+@media (max-width: 767px) {
+  .floating-circle {
+    width: calc(var(--circle-size) * 0.6);
+    height: calc(var(--circle-size) * 0.6);
+  }
+}

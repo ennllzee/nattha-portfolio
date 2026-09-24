@@ -1,0 +1,29 @@
+---
+import "./styles.css";
+
+interface Props {
+  color: string;
+  size: number;
+  anchorX?: "left" | "center" | "right";
+  anchorY?: "top" | "center" | "bottom";
+}
+
+const {
+  color,
+  size,
+  anchorX = "center",
+  anchorY = "center",
+} = Astro.props;
+---
+
+<div
+  class="floating-circle"
+  data-anchor-x={anchorX}
+  data-anchor-y={anchorY}
+  style={`--circle-color: ${color}; --circle-size: ${size}px;`}
+>
+</div>
+
+<script>
+  import "./script.ts";
+</script>
