@@ -1,12 +1,14 @@
 ---
-import Education from "../components/Education/Education.astro";
-import Experience from "../components/Experience/Experience.astro";
-import Introduction from "../components/Introduction/Introduction.astro";
-import ThankYou from "../components/ThankYou/ThankYou.astro";
+import Education from "../layouts/Contents/Education/Education.astro";
 import Layout from "../layouts/Layout.astro";
+import ThankYou from "../layouts/Contents/ThankYou/ThankYou.astro";
+import Introduction from "../layouts/Contents/Introduction/Introduction.astro";
+import Experience from "../layouts/Contents/Experience/Experience.astro";
+import Navigator from "../layouts/Contents/Navigator/Navigator.astro";
 ---
 
 <Layout title="Nattha — Portfolio">
+  <Navigator />
   <Introduction />
   <Experience />
   <Education />

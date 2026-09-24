@@ -1,0 +1,57 @@
+---
+
+import ColorDots from "../../../../../../components/ColorDots/ColorDots.astro";
+import HealthcareCenterWebsite from "./components/HealthcareCenterWebsite..astro";
+import HospitalWebsite from "./components/HospitalWebsite.astro";
+import SoftwareHouseWebsite from "./components/SoftwareHouseWebsite..astro";
+import "./styles.css";
+
+const WEDSITES = [
+  {
+    colors: ["#030620", "#FAC700"],
+    title: "Software House",
+    image: SoftwareHouseWebsite,
+    summary: "Turning a software house’s identity into a digital experience.",
+    description:
+      "Designed and developed the website using <strong>AstroWind</strong>, with a focus on responsive layouts and a clean, professional interface.",
+  },
+  {
+    colors: ["#5C7968", "#39698D"],
+    title: "Healthcare Center",
+    image: HealthcareCenterWebsite,
+    summary: "Making healthcare information accessible across languages.",
+    description:
+      "Built the website with <strong>Wix</strong>, including <strong>RTL</strong> support to create a natural experience for Arabic users.",
+  },
+  {
+    colors: ["#385B92", "#AC2738"],
+    title: "Hospital",
+    image: HospitalWebsite,
+    summary: "Designing for a different reading direction.",
+    description:
+      "Created the <strong>Figma design for an Arabic hospital website</strong>, adapting layouts, components, and user flows for <strong>RTL</strong> while maintaining a consistent visual experience.",
+  },
+];
+---
+
+<div class="sample-websites">
+  {
+    WEDSITES.map((website, index) => (
+      <div class={`sample-website sample-website-${index + 1}`}>
+        <div class="sample-website-text">
+          <ColorDots colors={website.colors} />
+          <h4>{website.title}</h4>
+        </div>
+
+        <div class="sample-website-image">
+          <website.image />
+        </div>
+
+        <div class="sample-website-description">
+          <strong>{website.summary}</strong>
+          <p set:html={website.description} />
+        </div>
+      </div>
+    ))
+  }
+</div>

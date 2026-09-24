@@ -1,0 +1,87 @@
+.navigator {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  background: var(--soft-pink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navigator-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 20px;
+  border: 0;
+  background: var(--soft-pink);
+  color: var(--dark-navy);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navigator-button svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.navigator-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background: var(--soft-pink);
+  transition: height 0.2s ease;
+}
+
+/* Selected */
+
+.navigator-button.is-selected {
+  background: var(--dark-navy);
+  color: var(--soft-pink);
+}
+
+.navigator-button.is-selected::after {
+  height: 5px;
+}
+
+/* Hover */
+
+.navigator-button:hover {
+  background: var(--dark-navy);
+  color: var(--soft-pink);
+}
+
+.navigator-button:hover::after {
+  height: 7px;
+}
+
+.navigator.is-shrunk {
+  width: fit-content;
+}
+
+.navigator.is-shrunk .navigator-button .navigator-button-text {
+  display: none;
+}
+
+.navigator.is-shrunk .navigator-button {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navigator.is-shrunk .navigator-button.is-selected .navigator-button-text {
+  display: inline-block !important;
+}
+
+.navigator.is-shrunk .navigator-button svg {
+  width: 16px;
+  height: 16px;
+}

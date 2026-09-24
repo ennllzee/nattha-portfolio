@@ -1,0 +1,16 @@
+---
+import AutoImagePreview from "../../../../../../../components/AutoImagePreview/AutoImagePreview.astro";
+
+
+const IMAGES = [
+  "/public/images/Healtcare Center - Green.png",
+  "/public/images/Healtcare Center - Blue.png",
+];
+---
+
+<AutoImagePreview
+  images={IMAGES}
+  alt="Healtcare Center"
+  transition="collapse"
+  interval={1500}
+/>

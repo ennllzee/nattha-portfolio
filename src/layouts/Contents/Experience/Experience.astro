@@ -1,0 +1,24 @@
+---
+import CommecialWebsites from "./components/CommercialWebsites/CommecialWebsites.astro";
+import PropertyListings from "./components/PropertyListings/PropertyListings.astro";
+import RestaurantManagement from "./components/RestaurantManagement/RestaurantManagement.astro";
+import "./styles.css";
+---
+
+<section id="experience" class="experience" data-section="experience">
+  <h2 class="section-title">EXPERIENCE</h2>
+
+  <div class="experience-item">
+    <div class="experience-role">
+      <span class="job-title nowrap">Software Engineer</span>
+      <span class="role-separator">—</span>
+      <span class="company-name">Mycos Technologies Co., Ltd.</span>
+    </div>
+
+    <div class="work-period">May 2022 — Present</div>
+  </div>
+
+  <RestaurantManagement />
+  <CommecialWebsites />
+  <PropertyListings />
+</section>

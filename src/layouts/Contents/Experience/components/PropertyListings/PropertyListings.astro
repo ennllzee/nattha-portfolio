@@ -1,0 +1,74 @@
+---
+import ColorDots from "../../../../../components/ColorDots/ColorDots.astro";
+import SampleFeatures from "./SampleFeatures/SampleFeatures.astro";
+
+const OCU_BLUE = "#00659A";
+const OCU_RED = "#DA113C";
+---
+
+<article class="work-item">
+  <!-- Project title -->
+  <div class="work-title">
+    <ColorDots colors={[OCU_BLUE, OCU_RED]} />
+
+    <h3>Property Listings Platform for Campus Students</h3>
+  </div>
+
+  <!-- Description 1 -->
+  <div class="work-description description-left">
+    <p>
+      A platform connecting college students, property owners, and property
+      agencies. Students can discover properties near campus and find compatible
+      roommates, while owners and agencies can promote and manage their rental
+      listings.
+    </p>
+  </div>
+
+  <!-- Description 1 -->
+  <div class="work-description-card">
+    <div class="work-description-card-image">
+      <div
+        class="parallax-image"
+        data-parallax
+        role="img"
+        aria-label={"Campus Students"}
+        style={`--parallax-image: url("/public/images/pexels-davegarcia-31039051.jpg")`}
+      >
+        <div class="parallax-image-inner"></div>
+      </div>
+    </div>
+
+    <div class="work-description">
+      <h4>Built for Growth</h4>
+
+      <p>
+        Now supporting <strong>20+ school sites</strong> on a single <strong
+          >Wix platform</strong
+        > and continuing to expand, the platform needs <strong
+          >a scalable structure and design</strong
+        > that can grow with it. A well-planned foundation helps <strong
+          >reduce implementation and management time, control costs, and
+          minimize workload</strong
+        > as more sites are added.
+      </p>
+    </div>
+  </div>
+
+  <!-- Description 3 -->
+  <div class="work-description description-left">
+    <p>
+      As a <strong>Technical Support / Lead</strong>, I take ownership of the <strong
+        >end-to-end development process</strong
+      >, from requirements gathering and <strong
+        >UX/UI, workflow, and system structure design</strong
+      > to implementation, testing, and maintenance. I’m also involved in <strong
+        >project management, client communication, problem solving, and
+        decision-making</strong
+      >, giving me the opportunity to work across both the technical and
+      business sides of the product.
+    </p>
+  </div>
+
+  <!-- Sample works -->
+  <SampleFeatures />
+</article>

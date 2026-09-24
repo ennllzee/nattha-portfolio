@@ -1,0 +1,48 @@
+---
+import "./styles.css";
+import HospitalCareGuide from "./HospitalCareGuide/HospitalCareGuide.astro";
+import ColorDots from "../../../components/ColorDots/ColorDots.astro";
+import ExpandButton from "../../../components/ExpandButton/ExpandButton.astro";
+
+const TC_PURPLE = "#C3A3DB";
+const TC_GREEN = "#7DC4B2";
+---
+
+<section id="education" class="education" data-section="education">
+  <!-- Left -->
+  <div class="education-panel education-info">
+    <h2>EDUCATION</h2>
+
+    <div class="education-data">
+      <p>
+        <strong>Bachelor of Engineering in Computer Engineering</strong>
+      </p>
+      <p>Chiang Mai University</p>
+      <p>2018 — 2022</p>
+      <p>GPAX 3.56</p>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="education-panel education-project">
+    <span class="education-label">Graduation Project</span>
+
+    <ColorDots colors={[TC_PURPLE, TC_GREEN]} />
+
+    <h3>Take Care — Hospital Care Guide Platform</h3>
+
+    <p>
+      A web application designed to support hospital care guide services,
+      connecting patients with care guides who assist them during hospital
+      visits. The application was built with <strong
+        >React and TypeScript</strong
+      >, with <strong>GraphQL </strong>
+      used for data communication.
+    </p>
+
+    <ExpandButton refClass="education" childClass="education-details" />
+  </div>
+
+  <!-- Expanded details -->
+  <HospitalCareGuide />
+</section>

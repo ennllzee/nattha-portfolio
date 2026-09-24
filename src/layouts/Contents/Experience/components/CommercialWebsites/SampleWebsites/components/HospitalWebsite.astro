@@ -1,0 +1,12 @@
+---
+import AutoImagePreview from "../../../../../../../components/AutoImagePreview/AutoImagePreview.astro";
+
+const IMAGES = ["/public/images/LTR.png", "/public/images/RTL.png"];
+---
+
+<AutoImagePreview
+  images={IMAGES}
+  alt="Hospital Website — RTL concept"
+  transition="slide"
+  interval={1800}
+/>

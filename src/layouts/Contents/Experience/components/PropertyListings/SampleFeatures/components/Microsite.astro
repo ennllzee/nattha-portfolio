@@ -1,0 +1,16 @@
+---
+import AutoImagePreview from "../../../../../../../components/AutoImagePreview/AutoImagePreview.astro";
+
+const IMAGES = [
+  "/public/images/Microsite - 1.png",
+  "/public/images/Microsite - 2.png",
+  "/public/images/Microsite - 3.png",
+];
+---
+
+<AutoImagePreview
+  images={IMAGES}
+  alt="Microsite"
+  transition="slide-up"
+  interval={1800}
+/>
