@@ -21,9 +21,9 @@ const setupParallax = () => {
     scrollTarget.removeEventListener("scroll", updateParallax);
   }
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const isTabletOrMobile = window.matchMedia("(max-width: 1111px)").matches;
 
-  scrollTarget = isMobile
+  scrollTarget = isTabletOrMobile
     ? window
     : (document.querySelector<HTMLElement>(".content") ?? window);
 

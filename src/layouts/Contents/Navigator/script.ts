@@ -1,5 +1,7 @@
 const layout = document.querySelector<HTMLElement>(".portfolio-layout");
 
+const mobileSidebar = document.querySelector<HTMLElement>(".mobile-sidebar");
+
 const content = document.querySelector<HTMLElement>(".content");
 
 const sections = document.querySelectorAll<HTMLElement>("[data-section]");
@@ -34,10 +36,34 @@ const expandCurrentButton = (sectionName: string) => {
   }, 1500);
 };
 
+const updateMobileSidebarState = (sectionName?: string) => {
+  if (!mobileSidebar || !content) return;
+
+  const contentRect = content.getBoundingClientRect();
+
+  // Sidebar is still visible → show full sidebar
+  if (!sectionName || (sectionName && contentRect.top > -50)) {
+    mobileSidebar.classList.remove("is-top-bar", "is-expanded");
+    return;
+  }
+
+  if (sectionName) {
+    const isTopBar = true;
+    mobileSidebar.classList.toggle("is-top-bar", isTopBar);
+
+    const isExpanded = sectionName !== "introduction";
+    mobileSidebar.classList.toggle("is-expanded", isExpanded);
+  } else {
+    mobileSidebar.classList.toggle("is-top-bar", false);
+  }
+};
+
 if (content && sections.length && navButtons.length) {
   const updateSelected = () => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    const scrollTop = isMobile ? window.scrollY : (content?.scrollTop ?? 0);
+    const isTabletOrMobile = window.matchMedia("(max-width: 1111px)").matches;
+    const scrollTop = isTabletOrMobile
+      ? window.scrollY
+      : (content?.scrollTop ?? 0);
 
     let currentSection: HTMLElement | null = null;
     let closestDistance = Infinity;
@@ -45,7 +71,7 @@ if (content && sections.length && navButtons.length) {
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
 
-      const sectionTop = isMobile
+      const sectionTop = isTabletOrMobile
         ? rect.top
         : rect.top - (content?.getBoundingClientRect().top ?? 0);
 
@@ -57,11 +83,9 @@ if (content && sections.length && navButtons.length) {
       }
     });
 
-    if (!currentSection) {
-      currentSection = sections[0];
-    }
-
-    const sectionName = currentSection.dataset.section;
+    const sectionName = currentSection
+      ? (currentSection as HTMLElement).dataset.section
+      : null;
 
     navButtons.forEach((button) => {
       button.classList.toggle(
@@ -70,18 +94,21 @@ if (content && sections.length && navButtons.length) {
       );
     });
 
-    if (window.matchMedia("(max-width: 767px)").matches) {
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    if (isMobile) {
       if (sectionName && sectionName !== lastSectionName) {
         expandCurrentButton(sectionName);
         lastSectionName = sectionName;
       }
+
+      updateMobileSidebarState(sectionName ?? undefined);
     }
   };
 
   const setupNavigator = () => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-    const targetContent = isMobile ? window : content;
+    const isTabletOrMobile = window.matchMedia("(max-width: 1111px)").matches;
+    const targetContent = isTabletOrMobile ? window : content;
 
     targetContent.addEventListener("scroll", updateSelected, {
       passive: true,
@@ -96,13 +123,13 @@ if (content && sections.length && navButtons.length) {
 }
 
 // Desktop Shrunk
-const introName = document.querySelector<HTMLElement>(".intro-name");
+const heroName = document.querySelector<HTMLElement>(".hero-name");
 
 const navigatorBar = document.querySelector<HTMLElement>(".navigator");
 
-if (content && introName && navigatorBar && layout) {
+if (content && heroName && navigatorBar && layout) {
   const updateNavigatorSize = () => {
-    const nameRect = introName.getBoundingClientRect();
+    const nameRect = heroName.getBoundingClientRect();
     const contentRect = content.getBoundingClientRect();
 
     const triggerPoint = contentRect.top + 80;

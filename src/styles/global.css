@@ -74,13 +74,28 @@ p {
   color: var(--dark-navy);
 }
 
+.mobile-footer {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  background-color: var(--dark-navy);
+  display: none;
+  box-shadow: 0 -4px 16px rgba(23, 43, 58, 0.12);
+}
+
 @media (max-width: 1111px) {
   .portfolio-layout {
+    --sidebar-width: 100%;
     grid-template-columns: 1fr;
   }
 
   .content {
+    height: 100%;
     overflow: visible;
+  }
+
+  .mobile-footer {
+    display: block;
   }
 }
 

@@ -1,5 +1,7 @@
 ---
+import Contacts from "../components/Contacts/Contacts.astro";
 import "../styles/global.css";
+import MobileSidebar from "./MobileSidebar/MobileSidebar.astro";
 import Sidebar from "./SideBar/Sidebar.astro";
 
 interface Props {
@@ -21,11 +23,16 @@ const { title = "Portfolio" } = Astro.props;
 
   <body>
     <div class="portfolio-layout">
+      <MobileSidebar />
       <Sidebar />
 
       <main class="content">
         <slot />
       </main>
+
+      <div class="mobile-footer">
+        <Contacts />
+      </div>
     </div>
   </body>
   <script>
