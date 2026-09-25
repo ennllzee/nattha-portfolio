@@ -1,3 +1,5 @@
+const layout = document.querySelector<HTMLElement>(".portfolio-layout");
+
 const content = document.querySelector<HTMLElement>(".content");
 
 const sections = document.querySelectorAll<HTMLElement>("[data-section]");
@@ -98,14 +100,16 @@ const introName = document.querySelector<HTMLElement>(".intro-name");
 
 const navigatorBar = document.querySelector<HTMLElement>(".navigator");
 
-if (content && introName && navigatorBar) {
+if (content && introName && navigatorBar && layout) {
   const updateNavigatorSize = () => {
     const nameRect = introName.getBoundingClientRect();
     const contentRect = content.getBoundingClientRect();
 
     const triggerPoint = contentRect.top + 80;
+    const isShrunk = nameRect.bottom < triggerPoint;
 
-    navigatorBar.classList.toggle("is-shrunk", nameRect.bottom < triggerPoint);
+    navigatorBar.classList.toggle("is-shrunk", isShrunk);
+    layout.classList.toggle("is-shrunk", isShrunk);
   };
 
   content.addEventListener("scroll", updateNavigatorSize, {

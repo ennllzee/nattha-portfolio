@@ -14,6 +14,8 @@
   color: var(--off-white);
 
   overflow: hidden;
+
+  box-shadow: 0 8px 16px rgba(23, 43, 58, 0.12);
 }
 
 .sidebar-card {
@@ -30,6 +32,9 @@
 
   padding: 40px;
 
+  transition:
+    padding 0.5s ease,
+    align-items 0.5s ease;
 }
 
 .sidebar-heading {
@@ -37,6 +42,18 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
+
+  transition:
+    gap 0.4s ease,
+    margin-bottom 0.4s ease;
+}
+
+.sidebar-heading > * {
+  transition:
+    font-size 0.4s ease,
+    line-height 0.4s ease,
+    opacity 0.3s ease,
+    max-height 0.4s ease;
 }
 
 .portfolio-title {
@@ -100,6 +117,13 @@
   border-radius: 50%;
 
   background: var(--soft-pink);
+
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    left 0.5s ease,
+    top 0.5s ease,
+    bottom 0.5s ease;
 }
 
 .profile-image {
@@ -116,10 +140,21 @@
   object-fit: contain;
 
   z-index: 2;
+
+  transition:
+    width 0.5s ease,
+    left 0.5s ease,
+    top 0.5s ease,
+    bottom 0.5s ease,
+    transform 0.5s ease;
 }
 
 .sidebar-contacts {
   width: 290px;
+
+  transition:
+    width 0.4s ease,
+    gap 0.4s ease;
 }
 
 /* Shrunk */

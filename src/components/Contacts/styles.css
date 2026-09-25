@@ -16,6 +16,10 @@
   column-gap: 12px;
 
   text-align: left;
+
+  transition:
+    justify-content 0.4s ease,
+    gap 0.4s ease;
 }
 
 .contact-icon {

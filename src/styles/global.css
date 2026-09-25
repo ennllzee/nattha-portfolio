@@ -55,6 +55,7 @@ p {
 
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  transition: grid-template-columns 0.5s ease;
 }
 
 .portfolio-layout.is-shrunk {
