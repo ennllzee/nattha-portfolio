@@ -1,7 +1,7 @@
 ---
 import AutoImagePreview from "../../../../../../../components/AutoImagePreview/AutoImagePreview.astro";
 
-const IMAGES = ["/images/LTR.png", "/images/RTL.png"];
+const IMAGES = [import.meta.env.BASE_URL + "/images/LTR.png", import.meta.env.BASE_URL + "/images/RTL.png"];
 ---
 
 <AutoImagePreview
