@@ -1,0 +1,28 @@
+---
+import Contacts from "../../components/Contacts/Contacts.astro";
+import "./styles.css";
+---
+
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-heading">
+      <h1 class="portfolio-title">PORTFOLIO</h1>
+      <h1 class="sidebar-name">NATTHA CHAITYARIN</h1>
+      <p class="sidebar-job-title">SOFTWARE ENGINEER</p>
+    </div>
+
+    <div class="profile-container">
+      <div class="profile-circle"></div>
+
+      <img
+        class="profile-image"
+        src="/public/images/profile-transparent.png"
+        alt="Nattha"
+      />
+    </div>
+
+    <div class="sidebar-contacts">
+      <Contacts />
+    </div>
+  </div>
+</aside>

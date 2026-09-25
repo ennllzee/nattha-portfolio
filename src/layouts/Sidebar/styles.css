@@ -1,0 +1,205 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+
+  position: sticky;
+  top: 24px;
+
+  background: linear-gradient(
+    180deg,
+    var(--deep-blue) 0%,
+    var(--dark-navy) 50%
+  );
+
+  color: var(--off-white);
+
+  overflow: hidden;
+}
+
+.sidebar-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 40px;
+
+}
+
+.sidebar-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.portfolio-title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  margin-bottom: -36px;
+
+  color: var(--soft-pink);
+
+  font-size: 64px;
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  text-align: center;
+}
+
+.sidebar-name {
+  display: none;
+  color: var(--off-white);
+}
+
+.sidebar-job-title {
+  display: none;
+  color: var(--off-white);
+}
+
+.profile-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 24px;
+}
+
+.profile-container {
+  position: relative;
+
+  width: 100%;
+  height: 320px;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-circle {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: 50%;
+  top: 20px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: var(--soft-pink);
+}
+
+.profile-image {
+  position: absolute;
+
+  width: 290px;
+  height: 320px;
+
+  left: 50%;
+  top: -5px;
+
+  transform: translateX(-50%);
+
+  object-fit: contain;
+
+  z-index: 2;
+}
+
+.sidebar-contacts {
+  width: 290px;
+}
+
+/* Shrunk */
+
+.portfolio-layout.is-shrunk .sidebar-card {
+  padding: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.portfolio-layout.is-shrunk .sidebar-heading {
+  gap: 3px;
+  margin-bottom: 20px;
+}
+
+.portfolio-layout.is-shrunk .portfolio-title {
+  color: var(--soft-pink);
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 0px;
+}
+
+.portfolio-layout.is-shrunk .sidebar-name {
+  display: block;
+  color: var(--off-white);
+  font-size: 38px;
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.portfolio-layout.is-shrunk .sidebar-job-title {
+  display: block;
+  color: var(--off-white);
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.portfolio-layout.is-shrunk .profile-container {
+  position: absolute;
+  bottom: 0px;
+}
+
+.portfolio-layout.is-shrunk .profile-circle {
+  width: calc(var(--sidebar-width) * 2);
+  height: calc(var(--sidebar-width) * 2);
+  left: calc(var(--sidebar-width) * -1);
+  bottom: calc(var(--sidebar-width) * -2);
+  transform: none;
+}
+
+.portfolio-layout.is-shrunk .profile-image {
+  width: calc(var(--sidebar-width) * 1.1);
+  height: auto;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+}
+
+.portfolio-layout.is-shrunk .sidebar-contacts {
+  width: 100%;
+}
+
+@media (max-width: 1111px) {
+  .sidebar {
+    position: relative;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    top: auto;
+  }
+
+  .sidebar-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+}

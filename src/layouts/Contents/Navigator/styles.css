@@ -23,6 +23,11 @@
   line-height: 1.2;
   font-weight: 700;
   white-space: nowrap;
+
+  transition:
+    padding 0.3s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .navigator-button svg {
@@ -53,23 +58,14 @@
   height: 5px;
 }
 
-/* Hover */
-
-.navigator-button:hover {
-  background: var(--dark-navy);
-  color: var(--soft-pink);
-}
-
-.navigator-button:hover::after {
-  height: 7px;
-}
-
 .navigator.is-shrunk {
   width: fit-content;
 }
 
 .navigator.is-shrunk .navigator-button .navigator-button-text {
   display: none;
+  max-width: 0;
+  opacity: 0;
 }
 
 .navigator.is-shrunk .navigator-button {
@@ -79,9 +75,121 @@
 
 .navigator.is-shrunk .navigator-button.is-selected .navigator-button-text {
   display: inline-block !important;
+  max-width: fit-content !important;
+  opacity: 1;
 }
 
 .navigator.is-shrunk .navigator-button svg {
   width: 16px;
   height: 16px;
+}
+
+@media (max-width: 767px) {
+  .navigator {
+    position: fixed;
+    top: 100px;
+    right: 0;
+
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 4px;
+
+    background: transparent;
+
+    z-index: 100;
+
+    transform: translateY(100vh);
+    transition: transform 0.6s ease;
+  }
+
+  .navigator.is-mobile-visible {
+    transform: translateY(0);
+  }
+
+  .navigator-button {
+    width: 48px;
+    min-height: 48px;
+
+    overflow: hidden;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-right: 3px solid transparent;
+    border-radius: 12px 0 0 12px;
+
+    background: var(--soft-pink);
+    color: var(--dark-navy);
+
+    transition:
+      width 0.3s ease,
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .navigator-button-text {
+    display: none;
+    max-width: none;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    transition:
+      max-width 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  .navigator-button.is-selected {
+    background: var(--dark-navy);
+    color: var(--soft-pink);
+    border-right-color: var(--soft-pink);
+  }
+
+  .navigator-button.is-expanded {
+    width: 160px;
+    justify-content: flex-start;
+  }
+
+  .navigator-button.is-expanded .navigator-button-text {
+    display: inline-block;
+    max-width: none;
+    opacity: 1;
+  }
+
+  .navigator-button::after {
+    display: none;
+  }
+
+  .navigator-resume .navigator-resume-text {
+    display: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navigator-button:hover {
+    background: var(--dark-navy);
+    color: var(--soft-pink);
+  }
+
+  .navigator-button:hover::after {
+    height: 10px;
+  }
+
+  .navigator-resume:hover {
+    background: var(--dark-navy);
+    color: var(--soft-pink);
+  }
+
+  .navigator-resume::after {
+    background: var(--dark-navy);
+    color: var(--soft-pink);
+  }
 }

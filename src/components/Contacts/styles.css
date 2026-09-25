@@ -1,0 +1,42 @@
+.contact-placeholder {
+  margin-top: auto;
+}
+
+.contact-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  column-gap: 12px;
+
+  text-align: left;
+}
+
+.contact-icon {
+  width: 32px;
+  color: var(--soft-pink);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-text {
+  color: var(--off-white);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+a.contact-item:hover .contact-text {
+  color: var(--soft-pink);
+}
