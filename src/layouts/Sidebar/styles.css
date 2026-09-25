@@ -201,6 +201,7 @@
 
 .portfolio-layout.is-shrunk .profile-container {
   position: fixed;
+  width: var(--sidebar-width);
   bottom: 0px;
 }
 

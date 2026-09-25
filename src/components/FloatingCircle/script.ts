@@ -9,7 +9,6 @@ document.querySelectorAll<HTMLElement>(".floating-circle").forEach((circle) => {
 
     let x = 0;
     let y = 0;
-
     if (anchorX === "left") {
       x = 0;
     } else if (anchorX === "right") {
@@ -31,7 +30,10 @@ document.querySelectorAll<HTMLElement>(".floating-circle").forEach((circle) => {
   };
 
   updatePosition();
-  window.addEventListener("resize", updatePosition);
+
+  const resizeObserver = new ResizeObserver(updatePosition);
+
+  resizeObserver.observe(parentElement);
 
   let dragging = false;
   let startX = 0;
