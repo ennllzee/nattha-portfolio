@@ -16,6 +16,8 @@
   overflow: hidden;
 
   display: block;
+
+  z-index: 100;
 }
 
 .sidebar-card {
@@ -213,8 +215,7 @@
 .portfolio-layout.is-shrunk .profile-image {
   width: calc(var(--sidebar-width) * 1.1);
   height: auto;
-  left: 50%;
-  bottom: 80px;
+  left: calc(var(--sidebar-width) * 0.5);
   transform: translateX(-50%);
 }
 
