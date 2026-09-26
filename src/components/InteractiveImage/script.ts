@@ -1,6 +1,5 @@
 document.querySelectorAll(".stage-preview").forEach((preview) => {
-  const images = preview.querySelectorAll(".image-button");
-
+  const images = preview.querySelectorAll(".stage-image");
   let current = 0;
   let interval: number | undefined;
 
@@ -9,6 +8,7 @@ document.querySelectorAll(".stage-preview").forEach((preview) => {
   if (total <= 1) return;
 
   const showImage = (index: number) => {
+
     images.forEach((image) => image.classList.remove("active"));
     images[index].classList.add("active");
     current = index;
