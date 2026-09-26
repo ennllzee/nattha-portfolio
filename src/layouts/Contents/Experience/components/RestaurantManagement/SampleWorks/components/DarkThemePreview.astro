@@ -33,9 +33,8 @@
     };
 
     // Mobile / touch
-    trigger.addEventListener("click", () => {
-      preview.classList.toggle("show-dark");
-    });
+    trigger.addEventListener("touchstart", showDark);
+    trigger.addEventListener("touchend", hideDark);
 
     // Desktop
     preview.addEventListener("mouseenter", showDark);

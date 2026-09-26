@@ -36,13 +36,22 @@ document.querySelectorAll(".stage-preview").forEach((preview) => {
     showImage(0);
   };
 
+  // Desktop: hover
   preview.addEventListener("mouseenter", start);
   preview.addEventListener("mouseleave", stop);
 
-  preview.addEventListener("touchstart", start, {
-    passive: true,
-  });
+  // Touch: tap to toggle
+  preview.addEventListener(
+    "touchstart",
+    (event) => {
+      event.preventDefault();
 
-  preview.addEventListener("touchend", stop);
-  preview.addEventListener("touchcancel", stop);
+      if (interval) {
+        stop();
+      } else {
+        start();
+      }
+    },
+    { passive: false },
+  );
 });
